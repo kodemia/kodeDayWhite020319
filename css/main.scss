@@ -1,198 +1,407 @@
-$baseContrast:#FFAA57;
+$baseContrast:#CF6700;
 $secondaryContrast:#A25000;
 $baseText:#ffffffb3;
 $ternaryContrast:#CF6700;
-
-*{
-	box-sizing:border-box;
-	font-family:arial;
-	color:$baseText;
+* {
+	box-sizing: border-box;
+	font-family: arial;
+	color: $baseText;
 }
+
 
 /* width */
+
 ::-webkit-scrollbar {
-  width: 10px;
+	width: 10px;
 }
+
 
 /* Track */
+
 ::-webkit-scrollbar-track {
-  background: $baseText; 
+	background: $baseText;
 }
- 
+
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: $ternaryContrast; 
+	background: $ternaryContrast;
 }
+
 
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
-  background: $secondaryContrast; 
+	background: $secondaryContrast;
 }
 
-body{
-	margin:0;
-	padding:0;
-	background:url("../img/body-background.png");
+body {
+	margin: 0;
+	padding: 0;
+	background: url("../img/body-background.png");
 	background-size: cover;
 	animation: bgKeyframe 50s infinite;
-	&::after{
-		content:"";
-		background:url("../img/body-background-3.png");
+	background-attachment: fixed;
+	background-position: 50%;
+	&::after {
+		content: "";
+		background: url("../img/body-background-3.png");
 	}
-	&::before{
-		content:"";
-		background:url("../img/body-background-4.png");
+	&::before {
+		content: "";
+		background: url("../img/body-background-4.png");
 	}
 }
 
-.background-2{
-	background:url("../img/body-background-2.png");
-}
-.background-3{
-	background:url("../img/body-background-3.png");
-}
-.background-4{
-	background:url("../img/body-background-4.png");
-}
-.background-1{
-	background:url("../img/body-background.png");
+.background-2 {
+	background: url("../img/body-background-2.png");
 }
 
+.background-3 {
+	background: url("../img/body-background-3.png");
+}
+
+.background-4 {
+	background: url("../img/body-background-4.png");
+}
+
+.background-1 {
+	background: url("../img/body-background.png");
+}
 
 @keyframes bgKeyframe {
-  0%   {background:url("../img/body-background.png");background-size:cover;}
-  25%  {background:url("../img/body-background-2.png");background-size:cover;}
-  50%  {background:url("../img/body-background-3.png");background-size:cover;}
-  75% {background:url("../img/body-background-4.png");background-size:cover;}
-  100% {background:url("../img/body-background.png");background-size:cover;}
+	0% {
+		background: url("../img/body-background.png");
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: 50%;
+	}
+	25% {
+		background: url("../img/body-background-2.png");
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: 50%;
+	}
+	50% {
+		background: url("../img/body-background-3.png");
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: 50%;
+	}
+	75% {
+		background: url("../img/body-background-4.png");
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: 50%;
+	}
+	100% {
+		background: url("../img/body-background.png");
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: 50%;
+	}
 }
 
-aside{
-	width:20%;
-	color:white;
-	text-align:center;
-	float:left;
-	border-right:1px solid $baseContrast;
-	height:100vh;
-	background:rgba(0,0,0,.5);
-	padding:20px;
-	.profile-pic{
-		width:60%;
-		margin:5vh auto 0 auto;
+aside {
+	display: flex;
+	width: 100%;
+	color: white;
+	text-align: center;
+	float: left;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 15px;
+	align-items: start;
+	flex-wrap: wrap;
+	.profile-pic {
+		width: 20%;
 		border-radius: 50%;
 	}
-	.personal-data-wrapper{
-		.profile-name{
-			color:$baseContrast;
-			font-size:30px;
-			margin-bottom:5px;
-		}
-		.profile-occupation,
-		.birth-date,
-		.birth-place{
-			color:$baseText;
+	.personal-data-wrapper {
+		flex-grow: 2;
+		.profile-name {
+			color: #CF6700;
+			font-size: 20px;
 			margin: 0px;
-			font-size:16px;
 		}
-		.profile-occupation{
-			font-style:italic;
-			margin-bottom:25px;
+		.profile-occupation {
+			font-style: italic;
+			margin-bottom: 25px;
+			margin-bottom: 5px;
+			font-size: 14px;
+			margin-top: 0px;
+		}
+		.birth-date {
+			font-size: 12px;
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+		.birth-place {
+			font-size: 12px;
+			margin-top: 0px;
 		}
 	}
-	nav{
-		margin-top:10vh;
-		ul{
-			list-style:none;
-			padding:0;
-			li{
-			    height: 43px;
-			    text-transform: uppercase;
-			    cursor: pointer;
-			    padding-top: 10px;
-			    font-size: 20px;
-			    &.active{
-			    	color:$baseContrast;
-			    }
-			    &:hover{
-			    	border-bottom:1px solid $secondaryContrast;
-			    }
+	nav {
+		width: 100%;
+		display: flex;
+		border-top: 1px solid $baseContrast;
+		border-bottom: 1px solid $baseContrast;
+		margin-top: 15px;
+		padding-bottom: 5px;
+		ul {
+			list-style: none;
+			padding: 0;
+			width: 100%;
+			display: flex;
+			margin: 0px;
+			li {
+				height: 29px;
+				text-transform: uppercase;
+				cursor: pointer;
+				padding-top: 10px;
+				font-size: 20px;
+				flex-grow: 1;
+				font-size: 14px;
 			}
 		}
 	}
 }
 
-section{
-	padding-top:5vh;
-	width:80%;
-	float:left;
-	background:rgba(0,0,0,.5);
-	height: 100vh;
-	overflow-y:scroll;
-	header{
-		padding-bottom:20px;
-		border-bottom:1px solid $baseText;
-		display:block;
-		margin-left: auto;
-		margin-right: auto;
-		min-width: 680px;
-		max-width:820px;
-		h1{
+section {
+	padding: 15px;
+	width: 100%;
+	float: left;
+	background: rgba(0, 0, 0, 0.5);
+	header {
+		padding-bottom: 15px;
+		border-bottom: 1px solid #ffffffb3;
+		display: block;
+		width: 100%;
+		h1 {
 			text-align: center;
-			color:$baseContrast;
-			font-size:30px;
-			min-width: 680px;
-			max-width:820px;
-			display: block;
-			margin-left:auto;
-			margin-right:auto;
+			color: $baseContrast;
+			font-size: 30px;
+			font-size: 18px;
+			margin-top: 0px;
 		}
-		p{
+		p {
 			text-align: center;
-			font-size:18px;
-			min-width: 680px;
-			max-width:820px;
-			display: block;
-			margin-left:auto;
-			margin-right:auto;
+			font-size: 16px;
+			line-height: 1.4;
+			margin-bottom: 0px;
 		}
 	}
-	article{
-		margin-top:5vh;
-		min-width: 680px;
-		max-width:820px;
-		margin-left:auto;
-		margin-right:auto;
-		padding:20px;
-		background:rgba(0,0,0,.5);
-		display:flex;
-		align-items:start;
-		.article-content{
-			flex-grow:2;
-			.article-title,
-			.article-date,
-			.article-body{
-				width:100%;
-				text-align:left;
-				margin:0px;
+	article {
+		margin-top: 20px;
+		padding: 15px;
+		background: rgba(0, 0, 0, 0.5);
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		width: 100%;
+		.article-content {
+			color: white;
+			font-size: 18px;
+			margin-bottom: 10px;
+			.article-title {
+				margin-top: 0px;
+				margin-bottom: 10px;
 			}
-			.article-title{
-				color:white;
-				font-size:24px;
-				margin-bottom:10px;
+			.article-date {
+				color: #CF6700;
+				font-size: 14px;
+				font-style: italic;
+				margin-bottom: 20px;
 			}
-			.article-date{
-				color:$baseContrast;
-				font-size:16px;
-				font-style:italic;
-				margin-bottom:20px;
-			}
-			.article-body{
-				line-height:1.4;
+			.article-body {
+				font-size: 14px;
 			}
 		}
-		.article-img{
-			width:200px;
-			margin-left: 20px;
+		.article-img {
+			width: 50%;
+			margin: 15px auto 0 auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	aside {
+		padding: 30px;
+		.personal-data-wrapper {
+			.profile-name {
+				font-size: 28px;
+				margin-top: 10px;
+			}
+			.profile-occupation {
+				font-size: 24px;
+				margin-top: 5px;
+			}
+			.birth-date,
+			.birth-place {
+				font-size: 20px;
+			}
+		}
+		nav {
+			ul {
+				li {
+					height: 35px;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+	section {
+		padding: 30px;
+		header {
+			.blog-title {
+				font-size: 24px;
+			}
+			p {
+				font-size: 20px;
+			}
+		}
+		article {
+			margin-top: 30px;
+			padding: 30px;
+			.article-content {
+				.article-title {
+					margin-top: 0px;
+					font-size: 24px;
+					margin-bottom: 10px;
+				}
+				.article-date {
+					margin-bottom: 20px;
+					font-size: 20px;
+				}
+				.article-body {
+					font-size: 18px;
+					line-height: 1.4;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	aside {
+		width: 20%;
+		float: left;
+		border-right: 1px solid $baseContrast;
+		height: 100vh;
+		background: rgba(0, 0, 0, .5);
+		padding: 20px;
+		.profile-pic {
+			width: 60%;
+			margin: 5vh auto 0 auto;
+			border-radius: 50%;
+		}
+		.personal-data-wrapper {
+			.profile-name {
+				color: $baseContrast;
+				font-size: 24px;
+				margin-bottom: 5px;
+			}
+			.profile-occupation,
+			.birth-date,
+			.birth-place {
+				color: $baseText;
+				margin: 0px;
+				font-size: 18px;
+			}
+			.profile-occupation {
+				font-style: italic;
+				margin-bottom: 25px;
+			}
+		}
+		nav {
+			margin-top: 10vh;
+			border:none;
+			ul {
+				display: block;
+				li {
+					&.active {
+						color: $baseContrast;
+					}
+					&:hover {
+						border-bottom: 1px solid $secondaryContrast;
+					}
+				}
+			}
+		}
+	}
+	section {
+		padding-top: 5vh;
+		width: 80%;
+		float: left;
+		background: rgba(0, 0, 0, .5);
+		height: 100vh;
+		overflow-y: scroll;
+		header {
+			padding-bottom: 20px;
+			border-bottom: 1px solid $baseText;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			min-width: 680px;
+			max-width: 820px;
+			h1 {
+				text-align: center;
+				color: $baseContrast;
+				font-size: 30px;
+				min-width: 680px;
+				max-width: 820px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			p {
+				text-align: center;
+				font-size: 18px;
+				min-width: 680px;
+				max-width: 820px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		article {
+			margin-top: 5vh;
+			min-width: 680px;
+			max-width: 820px;
+			margin-left: auto;
+			margin-right: auto;
+			background: rgba(0, 0, 0, .5);
+			display: flex;
+			align-items: start;
+			flex-direction:row;
+			.article-content {
+				flex-grow: 2;
+				.article-title,
+				.article-date,
+				.article-body {
+					width: 100%;
+					text-align: left;
+					margin: 0px;
+				}
+				.article-title {
+					color: white;
+					font-size: 24px;
+					margin-bottom: 10px;
+				}
+				.article-date {
+					color: $baseContrast;
+					font-size: 16px;
+					font-style: italic;
+					margin-bottom: 20px;
+				}
+				.article-body {
+					line-height: 1.4;
+				}
+			}
+			.article-img {
+				width: 200px;
+				margin-left: 20px;
+			}
 		}
 	}
 }
